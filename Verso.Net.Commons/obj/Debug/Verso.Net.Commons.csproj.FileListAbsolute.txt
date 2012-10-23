@@ -1,0 +1,5 @@
+C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll
+C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.pdb
+C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\ResolveAssemblyReference.cache
+C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.dll
+C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.pdb

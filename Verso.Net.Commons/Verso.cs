@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Xml.Serialization;
+
+namespace Verso.Net.Commons
+{
+    [DataContract(Name = "Verso")]
+    public class VersoMsg
+    {
+        [DataMember]
+        public string ServiceBlock { get; set; }
+
+        [DataMember]
+        public string Verb { get; set; }
+
+        [DataMember]
+        public ServiceTypeGeneric TypeVerso { get; set; }
+
+        [DataMember]
+        public byte[] DataVersoExtension { get; set; }
+
+        public object DataVerso
+        {
+            get { return GetData(null); }
+            set { SetData(value); }
+        }
+
+        private object _data;
+
+        public T GetData<T>()
+        {
+            if (typeof (T).FullName == TypeVerso.ClassName && _data == null)
+            {
+                var stream = new MemoryStream(DataVersoExtension);
+                var bformatter = new BinaryFormatter();
+
+                _data = bformatter.Deserialize(stream);
+                stream.Close();
+
+                return (T) _data;
+            }
+
+            throw new FormatException("El tipo almacenado no se corresponde con el especificado");
+        }
+
+        private object GetData(Type type)
+        {
+            if (_data == null)
+            {
+                var stream = new MemoryStream(DataVersoExtension);
+                var xmlSer = new XmlSerializer(type);
+
+                _data = xmlSer.Deserialize(stream);
+                stream.Close();
+            }
+
+            return _data;
+        }
+
+        public void SetData(object data)
+        {
+            TypeVerso = new ServiceTypeGeneric();
+
+            var tdata = data.GetType();
+                
+            TypeVerso.ClassName = tdata.FullName;
+            TypeVerso.AssemblyName = tdata.Assembly.FullName;
+
+            var stream = new MemoryStream();
+            
+            var xmlSer = new XmlSerializer(tdata);
+
+            xmlSer.Serialize(stream, data);
+            stream.Close();
+
+            DataVersoExtension = stream.ToArray();
+        }
+
+        public object Execute(object inteface, Type type)
+        {
+            return inteface.GetType().GetMethod(Verb).Invoke(inteface, new[] { GetData(type) });
+        }
+
+        public T ToServiceDto<T>() where T : new()
+        {
+            var res = new T();
+
+            res.GetType().GetProperty("DataVersoExtension").SetValue(res, DataVersoExtension, null);
+            res.GetType().GetProperty("TypeVerso").SetValue(res, TypeVerso, null);
+            res.GetType().GetProperty("Verb").SetValue(res, Verb, null);
+
+            return res;
+        }
+    }
+}
