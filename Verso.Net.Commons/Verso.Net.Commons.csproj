@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Verso.Net.Commons</RootNamespace>
     <AssemblyName>Verso.Net.Commons</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -33,14 +33,64 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceBlock.cs" />
+    <Compile Include="Octopus\OctopusFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\OctopusSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceTypeGeneric.cs" />
-    <Compile Include="Verso.cs" />
+    <Compile Include="VersoMsg.cs" />
+    <Compile Include="VersoTypeBinder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\OctopusSvc\service.wsdl" />
+    <None Include="Service References\OctopusSvc\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OctopusSvc\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OctopusSvc\Verso.Net.Commons.OctopusSvc.Verso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OctopusSvc\Verso.Net.Commons.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Octopus\Octopus.Injection.Commons\Octopus.Injection.Commons.csproj">
+      <Project>{3DB49629-ADE8-456F-B4D5-0B22F540E1BC}</Project>
+      <Name>Octopus.Injection.Commons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\OctopusSvc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OctopusSvc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OctopusSvc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OctopusSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

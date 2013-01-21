@@ -11,19 +11,19 @@ namespace Verso.Net.Facade
 {
     public class ServiceGenerator
     {
-        public void Null()
-        {
-            Type t = typeof (Message);
+        //public void Null()
+        //{
+        //    Type t = typeof (Message);
 
-            foreach (object cAttribute in t.GetProperty("").GetCustomAttributes(false))
-            {
+        //    foreach (object cAttribute in t.GetProperty("").GetCustomAttributes(false))
+        //    {
                 
-                if(cAttribute is DataMemberAttribute)
-                {
-                    var a = cAttribute as DataMemberAttribute;
+        //        if(cAttribute is DataMemberAttribute)
+        //        {
+        //            var a = cAttribute as DataMemberAttribute;
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
     }
 }

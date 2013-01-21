@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -39,6 +40,7 @@ namespace Verso.Net.Commons
             {
                 var stream = new MemoryStream(DataVersoExtension);
                 var bformatter = new BinaryFormatter();
+                bformatter.Binder = new VersoTypeBinder();
 
                 _data = bformatter.Deserialize(stream);
                 stream.Close();
@@ -54,9 +56,10 @@ namespace Verso.Net.Commons
             if (_data == null)
             {
                 var stream = new MemoryStream(DataVersoExtension);
-                var xmlSer = new XmlSerializer(type);
+                var bformatter = new BinaryFormatter();
+                bformatter.Binder = new VersoTypeBinder();
 
-                _data = xmlSer.Deserialize(stream);
+                _data = bformatter.Deserialize(stream);
                 stream.Close();
             }
 
@@ -73,10 +76,9 @@ namespace Verso.Net.Commons
             TypeVerso.AssemblyName = tdata.Assembly.FullName;
 
             var stream = new MemoryStream();
-            
-            var xmlSer = new XmlSerializer(tdata);
+            var bformatter = new BinaryFormatter();
 
-            xmlSer.Serialize(stream, data);
+            bformatter.Serialize(stream, data);
             stream.Close();
 
             DataVersoExtension = stream.ToArray();
