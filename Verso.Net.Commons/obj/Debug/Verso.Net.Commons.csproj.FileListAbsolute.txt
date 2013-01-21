@@ -6,3 +6,11 @@ C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.pdb
 C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll.config
 C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.dll
 C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.pdb
+E:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll.config
+E:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll
+E:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.pdb
+E:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.dll
+E:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.pdb
+E:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.csprojResolveAssemblyReference.cache
+E:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.dll
+E:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.pdb

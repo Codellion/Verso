@@ -1,8 +1,0 @@
-C:\Codellion\Github\Verso\Verso.Net.Facade\obj\Debug\ResolveAssemblyReference.cache
-C:\Codellion\Github\Verso\Verso.Net.Facade\bin\Debug\Verso.Net.Facade.dll.config
-C:\Codellion\Github\Verso\Verso.Net.Facade\bin\Debug\Verso.Net.Facade.dll
-C:\Codellion\Github\Verso\Verso.Net.Facade\bin\Debug\Verso.Net.Facade.pdb
-C:\Codellion\Github\Verso\Verso.Net.Facade\bin\Debug\Verso.Net.Commons.dll
-C:\Codellion\Github\Verso\Verso.Net.Facade\bin\Debug\Verso.Net.Commons.pdb
-C:\Codellion\Github\Verso\Verso.Net.Facade\obj\Debug\Verso.Net.Facade.dll
-C:\Codellion\Github\Verso\Verso.Net.Facade\obj\Debug\Verso.Net.Facade.pdb
