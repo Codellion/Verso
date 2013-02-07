@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 
 namespace Verso.Net.Commons.Octopus
@@ -20,7 +21,7 @@ namespace Verso.Net.Commons.Octopus
                 {
                     var secOcto = ConfigurationManager.GetSection("octopus") as NameValueCollection;
 
-                    if (secOcto != null && string.IsNullOrEmpty(secOcto["location"]))
+                    if (secOcto != null && !string.IsNullOrEmpty(secOcto["location"]))
                     {
                         _octoEndPoint = secOcto["location"];
                     }
@@ -38,7 +39,11 @@ namespace Verso.Net.Commons.Octopus
         {
             var res = new VersoMsg();
 
-            using (var octoSvc = new OctopusSvc.ServiceBlockClient(_octoEndPoint))
+            var httpBind = new BasicHttpBinding();
+            httpBind.ReaderQuotas.MaxArrayLength = 2147483647;
+            httpBind.ReaderQuotas.MaxStringContentLength = 2147483647;
+
+            using (var octoSvc = new OctopusSvc.ServiceBlockClient(httpBind, new EndpointAddress(new Uri(OctoEndPoint))))
             {
                 var verProxy = new OctopusSvc.Verso();
 

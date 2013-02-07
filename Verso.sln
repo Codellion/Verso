@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verso.Net.Commons", "Verso.Net.Commons\Verso.Net.Commons.csproj", "{0E7D4746-344B-4261-A3B6-C94FB0561133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octopus.Injection.Commons", "..\Octopus\Octopus.Injection.Commons\Octopus.Injection.Commons.csproj", "{3DB49629-ADE8-456F-B4D5-0B22F540E1BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verso.Net.Facade", "Verso.Net.Facade\Verso.Net.Facade.csproj", "{D583CF87-094E-433B-975A-417CE01A9060}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{0E7D4746-344B-4261-A3B6-C94FB0561133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7D4746-344B-4261-A3B6-C94FB0561133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7D4746-344B-4261-A3B6-C94FB0561133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DB49629-ADE8-456F-B4D5-0B22F540E1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DB49629-ADE8-456F-B4D5-0B22F540E1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DB49629-ADE8-456F-B4D5-0B22F540E1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DB49629-ADE8-456F-B4D5-0B22F540E1BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D583CF87-094E-433B-975A-417CE01A9060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D583CF87-094E-433B-975A-417CE01A9060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D583CF87-094E-433B-975A-417CE01A9060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D583CF87-094E-433B-975A-417CE01A9060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

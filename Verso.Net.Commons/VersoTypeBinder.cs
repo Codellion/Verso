@@ -11,7 +11,7 @@ namespace Verso.Net.Commons
     {
         public override Type BindToType(string assemblyName, string typeName)
         {
-            if (ConfigRepository.ServiceTypes.ContainsKey(assemblyName))
+            if (ConfigRepository.ServiceTypes != null && ConfigRepository.ServiceTypes.ContainsKey(assemblyName))
             {
                 if(typeName.Contains("`"))
                 {

@@ -56,7 +56,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\OctopusSvc\service.wsdl" />
     <None Include="Service References\OctopusSvc\service.xsd">
       <SubType>Designer</SubType>

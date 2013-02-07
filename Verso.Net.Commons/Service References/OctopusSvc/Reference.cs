@@ -29,7 +29,7 @@ namespace OctopusSvc {
         private string ServiceBlockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ServiceTypeGeneric TypeVersoField;
+        private OctopusSvc.ServiceTypeGeneric TypeVersoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VerbField;

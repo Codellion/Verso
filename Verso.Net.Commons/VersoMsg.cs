@@ -84,9 +84,38 @@ namespace Verso.Net.Commons
             DataVersoExtension = stream.ToArray();
         }
 
+        public void SetData<T>(object data)
+        {
+            TypeVerso = new ServiceTypeGeneric();
+
+            var tdata = typeof(T);
+
+            TypeVerso.ClassName = tdata.FullName;
+            TypeVerso.AssemblyName = tdata.Assembly.FullName;
+
+            var stream = new MemoryStream();
+            var bformatter = new BinaryFormatter();
+
+            bformatter.Serialize(stream, data);
+            stream.Close();
+
+            DataVersoExtension = stream.ToArray();
+        }
+
         public object Execute(object inteface, Type type)
         {
-            return inteface.GetType().GetMethod(Verb).Invoke(inteface, new[] { GetData(type) });
+            object res = null;
+
+            try
+            {
+                res = inteface.GetType().GetMethod(Verb, new Type[] { type }).Invoke(inteface, new[] { GetData(type) });
+            }
+            catch(Exception ex)
+            {
+                throw ex.InnerException;
+            }
+
+            return res;
         }
 
         public T ToServiceDto<T>() where T : new()
