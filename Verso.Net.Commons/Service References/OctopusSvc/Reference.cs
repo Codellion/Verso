@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OctopusSvc {
+namespace Verso.Net.Commons.OctopusSvc {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,7 +29,7 @@ namespace OctopusSvc {
         private string ServiceBlockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private OctopusSvc.ServiceTypeGeneric TypeVersoField;
+        private ServiceTypeGeneric TypeVersoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VerbField;
@@ -71,7 +71,7 @@ namespace OctopusSvc {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public OctopusSvc.ServiceTypeGeneric TypeVerso {
+        public ServiceTypeGeneric TypeVerso {
             get {
                 return this.TypeVersoField;
             }
@@ -172,16 +172,16 @@ namespace OctopusSvc {
     public interface IServiceBlock {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBlock/ExecuteServiceBlock", ReplyAction="http://tempuri.org/IServiceBlock/ExecuteServiceBlockResponse")]
-        OctopusSvc.Verso ExecuteServiceBlock(OctopusSvc.Verso verso);
+        Verso ExecuteServiceBlock(Verso verso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceBlockChannel : OctopusSvc.IServiceBlock, System.ServiceModel.IClientChannel {
+    public interface IServiceBlockChannel : IServiceBlock, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceBlockClient : System.ServiceModel.ClientBase<OctopusSvc.IServiceBlock>, OctopusSvc.IServiceBlock {
+    public partial class ServiceBlockClient : System.ServiceModel.ClientBase<IServiceBlock>, IServiceBlock {
         
         public ServiceBlockClient() {
         }
@@ -202,7 +202,7 @@ namespace OctopusSvc {
                 base(binding, remoteAddress) {
         }
         
-        public OctopusSvc.Verso ExecuteServiceBlock(OctopusSvc.Verso verso) {
+        public Verso ExecuteServiceBlock(Verso verso) {
             return base.Channel.ExecuteServiceBlock(verso);
         }
     }

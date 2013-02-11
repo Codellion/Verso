@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using Verso.Net.Commons.Octopus.ServiceBlocks;
 
 namespace Verso.Net.Commons.Octopus
 {
@@ -13,6 +14,7 @@ namespace Verso.Net.Commons.Octopus
         private const string DefautlOctoEndpoint = "http://localhost/ServiceOctopus";
         private static string _octoEndPoint;
 
+        
         public static string OctoEndPoint
         {
             get
@@ -35,6 +37,31 @@ namespace Verso.Net.Commons.Octopus
             }
         }
 
+        public static VersoMsg GetVerso<T>(Enum verb) where T : BaseSvcBlock
+        {
+            var svcBlock = Activator.CreateInstance<T>();
+            return svcBlock.GetVerso(verb);
+        }
+
+        public static VersoMsg GetVerso<T, TV>(Enum verb, object dataVerso) where T : BaseSvcBlock
+        {
+            var svcBlock = Activator.CreateInstance<T>();
+            return svcBlock.GetVerso<TV>(verb, dataVerso);
+        }
+
+        public static VersoMsg ExecuteServiceBlock<T>(Enum verb, object dataVerso) where T : BaseSvcBlock
+        {
+            var verso = GetVerso<T>(verb);
+            verso.DataVerso = dataVerso;
+
+            return ExecuteServiceBlock(verso);
+        }
+
+        public static VersoMsg ExecuteServiceBlock<T, TV>(Enum verb, object dataVerso) where T : BaseSvcBlock
+        {
+            return ExecuteServiceBlock(GetVerso<T, TV>(verb, dataVerso));
+        }
+
         public static VersoMsg ExecuteServiceBlock(VersoMsg verso)
         {
             var res = new VersoMsg();
@@ -42,6 +69,7 @@ namespace Verso.Net.Commons.Octopus
             var httpBind = new BasicHttpBinding();
             httpBind.ReaderQuotas.MaxArrayLength = 2147483647;
             httpBind.ReaderQuotas.MaxStringContentLength = 2147483647;
+            httpBind.ReaderQuotas.MaxNameTableCharCount = 2147483647;
 
             using (var octoSvc = new OctopusSvc.ServiceBlockClient(httpBind, new EndpointAddress(new Uri(OctoEndPoint))))
             {
