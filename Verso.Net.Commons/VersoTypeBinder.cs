@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
+
 using Octopus.Injection.Commons;
 
 namespace Verso.Net.Commons
@@ -18,8 +16,6 @@ namespace Verso.Net.Commons
                     //Es un tipo genérico, cogemos el tipo base y el nº de eltos gen.
 
                     string[] typeData = typeName.Split('`');
-
-                    string typeBaseName = typeData[0];
                     int numGenParams = int.Parse(typeData[1].Substring(0, 1));
                     string detGenparams = typeData[1].Substring(1, typeData[1].Length-1);
 

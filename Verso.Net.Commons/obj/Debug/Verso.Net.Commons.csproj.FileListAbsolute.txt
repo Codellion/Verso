@@ -1,8 +1,8 @@
-C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll.config
-C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll
-C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.pdb
-C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.dll
-C:\Codellion\Github\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.pdb
-C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\ResolveAssemblyReference.cache
-C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.dll
-C:\Codellion\Github\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.pdb
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll.config
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.dll
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\bin\Debug\Verso.Net.Commons.pdb
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.dll
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\bin\Debug\Octopus.Injection.Commons.pdb
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.csprojResolveAssemblyReference.cache
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.dll
+C:\Codellion\GitHub\Verso\Verso.Net.Commons\obj\Debug\Verso.Net.Commons.pdb

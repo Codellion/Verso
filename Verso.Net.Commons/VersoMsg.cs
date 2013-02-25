@@ -38,12 +38,14 @@ namespace Verso.Net.Commons
         {
             if (typeof (T).FullName == TypeVerso.ClassName && _data == null)
             {
-                var stream = new MemoryStream(DataVersoExtension);
-                var bformatter = new BinaryFormatter();
-                bformatter.Binder = new VersoTypeBinder();
+                using (var stream = new MemoryStream(DataVersoExtension))
+                {
+                    var bformatter = new BinaryFormatter();
+                    bformatter.Binder = new VersoTypeBinder();
 
-                _data = bformatter.Deserialize(stream);
-                stream.Close();
+                    _data = bformatter.Deserialize(stream);
+                    stream.Close();
+                }
 
                 return (T) _data;
             }
@@ -55,12 +57,14 @@ namespace Verso.Net.Commons
         {
             if (_data == null)
             {
-                var stream = new MemoryStream(DataVersoExtension);
-                var bformatter = new BinaryFormatter();
-                bformatter.Binder = new VersoTypeBinder();
+                using (var stream = new MemoryStream(DataVersoExtension))
+                {
+                    var bformatter = new BinaryFormatter();
+                    bformatter.Binder = new VersoTypeBinder();
 
-                _data = bformatter.Deserialize(stream);
-                stream.Close();
+                    _data = bformatter.Deserialize(stream);
+                    stream.Close();
+                }
             }
 
             return _data;
@@ -75,13 +79,15 @@ namespace Verso.Net.Commons
             TypeVerso.ClassName = tdata.FullName;
             TypeVerso.AssemblyName = tdata.Assembly.FullName;
 
-            var stream = new MemoryStream();
-            var bformatter = new BinaryFormatter();
+            using (var stream = new MemoryStream())
+            {
+                var bformatter = new BinaryFormatter();
 
-            bformatter.Serialize(stream, data);
-            stream.Close();
+                bformatter.Serialize(stream, data);
+                stream.Close();
 
-            DataVersoExtension = stream.ToArray();
+                DataVersoExtension = stream.ToArray();
+            }
         }
 
         public void SetData<T>(object data)
@@ -93,13 +99,15 @@ namespace Verso.Net.Commons
             TypeVerso.ClassName = tdata.FullName;
             TypeVerso.AssemblyName = tdata.Assembly.FullName;
 
-            var stream = new MemoryStream();
-            var bformatter = new BinaryFormatter();
+            using (var stream = new MemoryStream())
+            {
+                var bformatter = new BinaryFormatter();
 
-            bformatter.Serialize(stream, data);
-            stream.Close();
+                bformatter.Serialize(stream, data);
+                stream.Close();
 
-            DataVersoExtension = stream.ToArray();
+                DataVersoExtension = stream.ToArray();
+            }
         }
 
         public object Execute(object inteface, Type type)

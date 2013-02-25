@@ -42,8 +42,8 @@
   <ItemGroup>
     <Compile Include="IServiceBlock.cs" />
     <Compile Include="Octopus\OctopusFacade.cs" />
+    <Compile Include="Octopus\ServiceBlocks\BaseSvcBlock.cs" />
     <Compile Include="Octopus\ServiceBlocks\OctopusSvcBlock.cs" />
-    <Compile Include="Octopus\ServiceBlocks\OctoSvcBlock.cs" />
     <Compile Include="Octopus\ServiceBlocks\MementoSvcBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\OctopusSvc\Reference.cs">
